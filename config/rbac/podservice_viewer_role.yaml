@@ -1,0 +1,23 @@
+# permissions for end users to view podservices.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: pod-service-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: podservice-viewer-role
+rules:
+- apiGroups:
+  - app.entrytask.com
+  resources:
+  - podservices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - app.entrytask.com
+  resources:
+  - podservices/status
+  verbs:
+  - get

@@ -1,0 +1,16 @@
+apiVersion: app.entrytask.com/v1
+kind: PodService
+metadata:
+  labels:
+    app.kubernetes.io/name: pod-service-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: podservice-sample
+spec:
+  # TODO(user): Add fields here
+  name: nginx
+  replicas: 6
+  image: nginx:latest
+  maxSurge: 1
+  maxUnavailable: 1
+  port: 80
+  servicePort: 8081

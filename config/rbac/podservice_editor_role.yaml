@@ -1,0 +1,27 @@
+# permissions for end users to edit podservices.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: pod-service-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: podservice-editor-role
+rules:
+- apiGroups:
+  - app.entrytask.com
+  resources:
+  - podservices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - app.entrytask.com
+  resources:
+  - podservices/status
+  verbs:
+  - get
