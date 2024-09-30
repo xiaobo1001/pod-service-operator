@@ -8,9 +8,9 @@ metadata:
 spec:
   # TODO(user): Add fields here
   name: nginx
-  replicas: 6
+  replicas: 3
   image: nginx:latest
   maxSurge: 1
   maxUnavailable: 1
   port: 80
-  servicePort: 8081
+  servicePort: 9000
